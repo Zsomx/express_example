@@ -1,16 +1,17 @@
 version: "3.5"
 services:
-  image: 192.168.2.2:5000/expressapp:latest
-  ports:
-    - 8080:3000
-  deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        constraints:
-          - node.labels.cloudrole == appnode
-  networks:
-    - app_nw
+  express:
+    image: "192.168.2.2:5000/expressapp:latest"
+    ports:
+      - 8080:3000
+    deploy:
+        mode: replicated
+        replicas: 1
+        placement:
+          constraints:
+            - node.labels.cloudrole == appnode
+    networks:
+      - app_nw
 networks:
   app_nw:
     driver: overlay
