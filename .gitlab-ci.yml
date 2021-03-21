@@ -1,0 +1,7 @@
+default:
+    image: node:12
+test-job:
+  stage: test
+  script:
+    - npm i
+    - npm run-script test
