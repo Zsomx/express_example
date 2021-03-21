@@ -14,8 +14,3 @@ jobs:
           node-version: 12.x
       - run: npm i
       - run: npm run-script test
-  test:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - run: npm run-script test
